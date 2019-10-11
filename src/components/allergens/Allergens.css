@@ -3,14 +3,14 @@
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     border-radius: 5px; /* 5px rounded corners */
-    background: aliceblue;
+    background: rgb(229, 236, 229);
   }
 
   .card-content h3 {
     margin-top: 0;
     margin-bottom: .5em;
     font-weight: bold;
-    color: rgb(43, 112, 241);
+    color: rgb(81, 87, 97);
   }
 
   .card-content p {
@@ -18,14 +18,10 @@
     color: darkslategrey;
   }
 
-  .content-petname {
-    color: darkslategrey;
-  }
-
   .card button {
-    background-color: cornflowerblue;
+    background-color: rgb(233, 202, 102);
     border: none;
-    color: cornsilk;
+    color: rgb(124, 120, 102);
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -37,5 +33,5 @@
   }
 
   .card button:hover {
-    background-color: darkblue;
+    background-color: rgb(240, 225, 14);
   }

@@ -19,7 +19,7 @@ class NavBar extends Component {
         </h1>
         <nav>
           <ul className="container">
-            <li><Link className="nav-link" to="/home">Home</Link></li>
+
             {!auth0Client.isAuthenticated() ? (
               <button className="btn btn-success" onClick={auth0Client.signIn}>Sign In</button>
         ) : (
@@ -33,6 +33,7 @@ class NavBar extends Component {
               >
                 Sign Out
               </button>
+              <li><Link className="nav-link" to="/home">Home</Link></li>
             <li><Link className="nav-link" to="/userProfile">User Profile</Link></li>
             <li><Link className="nav-link" to="/allergens">Allergens</Link></li>
             <li><Link className="nav-link" to="/data">Data</Link></li>
@@ -40,9 +41,6 @@ class NavBar extends Component {
         )}
           </ul>
         </nav>
-        <picture>
-            <img className="background-img" src={require('./nature.png')} alt="Nature Scene" />
-        </picture>
       </header>
     )
   }
