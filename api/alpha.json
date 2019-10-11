@@ -33,6 +33,17 @@
       "userId": 2,
       "productTypeId": 1,
       "allergenTypeId": 1
+    },
+    {
+      "productName": "stuff",
+      "notes": "test",
+      "symptoms": "",
+      "tookMeds": "",
+      "medIntervention": "",
+      "userId": 1,
+      "productTypeId": 1,
+      "allergenTypeId": 1,
+      "id": 3
     }
   ],
   "productTypes": [

@@ -4,6 +4,7 @@ import Home from './home/Home'
 import AllergensList from './allergens/AllergensList'
 import Callback from './auth/Callback'
 import Auth0Client from "./auth/Auth";
+import AllergensForm from './allergens/AllergensForm'
 
 class ApplicationViews extends Component {
 
@@ -21,6 +22,9 @@ class ApplicationViews extends Component {
               return null;
             }
           }} />
+          <Route path="/allergens/new" render={(props) => {
+  return <AllergensForm {...props} />
+}} />
           <Route exact path="/callback" component={Callback} />
         </React.Fragment>
       )

@@ -9,6 +9,17 @@ import React, { Component } from 'react'
             allergens: [],
         }
 
+        deleteAllergen = id => {
+            AllergenManager.delete(id)
+            .then(() => {
+              AllergenManager.getAll()
+              .then((newAllergens) => {
+                this.setState({
+                    news: newAllergens
+                })
+              })
+            })
+          }
     componentDidMount(){
         console.log("Allergen LIST: ComponentDidMount");
         //getAll from AllergenManager and hang on to that data; put it in state
@@ -24,11 +35,19 @@ import React, { Component } from 'react'
         console.log("Allergen LIST: Render");
 
         return(
-
+            <>
+            <section className="section-content">
+                    <button type="button"
+                        className="btn"
+                        onClick={() => { this.props.history.push("/allergens/new") }}>
+                        Input New Allergen
+                    </button>
+            </section>
             <div className="container-cards">
                 {this.state.allergens.map(singleAllergen =>
-                <AllergensCard key={singleAllergen.id} allergenProp={singleAllergen} {...this.props}/>)}
+                <AllergensCard key={singleAllergen.id} allergenProp={singleAllergen} deleteAllergen={this.deleteAllergen}{...this.props}/>)}
             </div>
+            </>
         )
     }
 }
