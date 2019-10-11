@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
-import { Link } from "react-router-dom"
+import { Link, withRouter } from "react-router-dom"
 import './NavBar.css'
+import auth0Client from "../auth/Auth";
 
 class NavBar extends Component {
+  signOut = () => {
+    auth0Client.signOut();
+    sessionStorage.clear()
+    this.props.history.replace("/");
+  };
 
   render(){
 
@@ -14,14 +20,32 @@ class NavBar extends Component {
         <nav>
           <ul className="container">
             <li><Link className="nav-link" to="/home">Home</Link></li>
+            {!auth0Client.isAuthenticated() ? (
+              <button className="btn btn-success" onClick={auth0Client.signIn}>Sign In</button>
+        ) : (
+          <React.Fragment>
+             <label>
+                {auth0Client.getProfile().name}
+              </label>
+              <button
+                className="btn btn-danger"
+                onClick={this.signOut}
+              >
+                Sign Out
+              </button>
             <li><Link className="nav-link" to="/userProfile">User Profile</Link></li>
             <li><Link className="nav-link" to="/allergens">Allergens</Link></li>
             <li><Link className="nav-link" to="/data">Data</Link></li>
+            </React.Fragment>
+        )}
           </ul>
         </nav>
+        <picture>
+            <img className="background-img" src={require('./nature.png')} alt="Nature Scene" />
+        </picture>
       </header>
     )
   }
 }
 
-export default NavBar;
+export default withRouter(NavBar);
