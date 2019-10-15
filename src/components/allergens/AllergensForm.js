@@ -20,12 +20,7 @@ class AllergensForm extends Component {
         stateToChange[evt.target.id] = evt.target.value;
         this.setState(stateToChange);
     };
-    // handleSubmit(evt) {
-    //     this.state.symptoms.value ?????????
-    //     const symptoms = {
-    //         symptoms: []
-    //     }
-    // }
+
     constructNewAllergen = evt => {
         evt.preventDefault();
         if(this.state.productName === "" || this.state.notes === "") {
@@ -50,7 +45,7 @@ class AllergensForm extends Component {
     render() {
         return (
             <>
-                <form onSubmit={this.handleSubmit}>
+                <form>
                     <fieldset>
                         <div className="formgrid">
                             <label htmlFor="productName">Product Name</label>
@@ -61,6 +56,11 @@ class AllergensForm extends Component {
                                 id="productName"
                                 placeholder="Name of product"
                             />
+                        </div>
+                        </fieldset>
+
+                        <fieldset>
+                        <div className="formgrid">
                             <label htmlFor="notes">Notes about your reaction. Please be thorough, include any restaurant names or brands and what happened:</label>
                             <input
                                 type="text"
@@ -69,19 +69,60 @@ class AllergensForm extends Component {
                                 id="notes"
                                 placeholder="Notes about allergic reaction"
                             />
-                            <label htmlFor="symptoms">Select the symptoms you had:
+                            </div>
+                        </fieldset>
 
-              <select multiple={true} value={this.state.symptoms.value} onChange={this.handleFieldChange}>
-                <option value="hives">Hives</option>
-                <option value="anaphalaxis">Anaphalaxis</option>
-                <option value="stomachPain">Stomach Pain/Discomfort</option>
-                <option value="breathing">Trouble Breathing</option>
-              </select>
-            </label>
-            <input type="submit" value="Submit" />
+                        <fieldset>
+                        <div className="formgrid">
+                            <label htmlFor="symptoms">Please list any symptoms you experienced. You can write things like "hives", "anaphalaxis", "stomach pain":</label>
+                            <input
+                                type="text"
+                                required
+                                onChange={this.handleFieldChange}
+                                id="symptoms"
+                                placeholder="Symptoms experienced"
+                            />
+                            </div>
+                        </fieldset>
 
+                            <fieldset>
+                        <div className="formgrid">
+                            <label htmlFor="tookMeds">Check the box if you took ANY medication for this reaction.
+                            <input
+                                id="tookMeds"
+                                type="checkbox"
+                                checked={this.state.tookMeds}
+                                onChange={this.handleFieldChange} />
+                            </label>
+                            </div>
+                        </fieldset>
+                            <fieldset>
+                        <div className="formgrid">
+                            <label htmlFor="medIntervention">Check the box if you had ANY medical intervention for this reaction, such as you went to the ER or doctor.
+                            <input
+                                id="medIntervention"
+                                type="checkbox"
+                                checked={this.state.medIntervention}
+                                onChange={this.handleFieldChange} />
+                            </label>
+                            </div>
+                        </fieldset>
 
-                        </div>
+                        <fieldset>
+                            <label htmlFor="productTypeId">Select the type of product that caused your allergic reaction. You can be more specific about the product in the "Notes" section above:
+                            <select id="productTypeId">
+                                <option value={this.state.productTypeId}>Food</option>
+                                <option value={this.state.productTypeId}>Supplement(i.e. vitamins, herbs, protein powder)</option>
+                                <option value={this.state.productTypeId}>Medicine(OTC or prescribed)</option>
+                                <option value={this.state.productTypeId}>Environmental( i.e. lotion, laundry detergent, fumes)</option>
+                                <option value={this.state.productTypeId}>Other</option>
+                                <option value={this.state.productTypeId}>Unknown</option>
+                            </select>
+                            </label>
+                        </fieldset>
+
+                        <fieldset>
+                        <div className="formgrid">
                         <div className="alignRight">
                             <button
                                 type="button"
@@ -89,7 +130,9 @@ class AllergensForm extends Component {
                                 onClick={this.constructNewAllergen}
                             >Submit</button>
                         </div>
+                        </div>
                     </fieldset>
+
                 </form>
             </>
 

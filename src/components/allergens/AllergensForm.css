@@ -10,7 +10,7 @@ fieldset {
 
 fieldset input, fieldset button{
     box-sizing: border-box;
-    padding: .2em .4em;
+    padding: .4em .4em;
     margin: .2em 0;
     outline: none;
     box-shadow: none;
@@ -34,6 +34,7 @@ fieldset button {
 
 fieldset label {
     box-sizing: border-box;
+    padding: 1em;
     user-select: none;
     cursor: pointer;
 }
