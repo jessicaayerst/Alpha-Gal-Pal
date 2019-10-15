@@ -2,8 +2,9 @@ import React, { Component } from 'react'
     //import the components we will need
     import AllergensCard from './AllergensCard'
     import AllergenManager from '../../modules/allergenManager'
+    import UserManager from '../../modules/userManager'
 
-    class AllergenList extends Component {
+    class AllergensList extends Component {
         //define what this component needs to render
         state = {
             allergens: [],
@@ -15,7 +16,7 @@ import React, { Component } from 'react'
               AllergenManager.getAll()
               .then((newAllergens) => {
                 this.setState({
-                    news: newAllergens
+                    allergens: newAllergens
                 })
               })
             })
@@ -23,10 +24,12 @@ import React, { Component } from 'react'
     componentDidMount(){
         console.log("Allergen LIST: ComponentDidMount");
         //getAll from AllergenManager and hang on to that data; put it in state
-        AllergenManager.getAll()
+        // AllergenManager.getAll()
+        UserManager.getWithAllergens(1)
         .then((allergensFromData) => {
+            console.log(allergensFromData.allergens)
             this.setState({
-                allergens: allergensFromData
+                allergens: allergensFromData.allergens
             })
         })
     }
@@ -43,13 +46,14 @@ import React, { Component } from 'react'
                         Input New Allergen
                     </button>
             </section>
-            <div className="container-cards">
+            <div>
                 {this.state.allergens.map(singleAllergen =>
-                <AllergensCard key={singleAllergen.id} allergenProp={singleAllergen} deleteAllergen={this.deleteAllergen}{...this.props}/>)}
+                <AllergensCard key={singleAllergen.id} allergenProp={singleAllergen} deleteAllergen={this.deleteAllergen} {...this.props}/>
+                )}
             </div>
             </>
         )
     }
 }
 
-export default AllergenList
+export default AllergensList

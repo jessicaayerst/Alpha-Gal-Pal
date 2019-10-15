@@ -13,37 +13,26 @@
   ],
   "allergens": [
     {
-      "id": 1,
-      "productName": "french toast",
-      "notes": "This made me very sick every time I ate it.",
-      "symptoms": "hives",
+      "productName": "Ibuprofen",
+      "notes": "I took ibuprofen for a headache around 1pm and about 7pm broke out in the worst hives I've ever had. I took some benadryl and they went away in about 20 minutes.",
+      "symptoms": "hives, stomach pain",
       "tookMeds": true,
       "medIntervention": false,
       "userId": 1,
-      "productTypeId": 1,
-      "allergenTypeId": 2
+      "productTypeId": "3",
+      "allergenTypeId": "5",
+      "id": 1
     },
     {
-      "id": 2,
-      "productName": "ham",
-      "notes": "I had eaten it before but had no problem. I ate it two nights ago and went into anaphalaxis.",
-      "symptoms": "anaphalaxis",
+      "productName": "French Toast Sticks",
+      "notes": "I ate french toast sticks from Burger King and had hives and trouble breathing/wheezing about 6 hours later. I called BK and they said they deep fry pork sausage in the same fryer as the sticks.",
+      "symptoms": "hives, trouble breathing",
       "tookMeds": true,
-      "medIntervention": true,
+      "medIntervention": false,
       "userId": 2,
-      "productTypeId": 1,
-      "allergenTypeId": 1
-    },
-    {
-      "productName": "stuff",
-      "notes": "test",
-      "symptoms": "",
-      "tookMeds": "",
-      "medIntervention": "",
-      "userId": 1,
-      "productTypeId": 1,
-      "allergenTypeId": 1,
-      "id": 3
+      "productTypeId": "",
+      "allergenTypeId": "",
+      "id": 2
     }
   ],
   "productTypes": [
@@ -53,23 +42,23 @@
     },
     {
       "id": 2,
-      "name": "supplement"
+      "name": "Supplement(i.e. vitamins, herbs, protein powder)"
     },
     {
       "id": 3,
-      "name": "medicine"
+      "name": "Medicine(OTC or prescribed)"
     },
     {
       "id": 4,
-      "name": "environmental"
+      "name": "Environmental( i.e. lotion, laundry detergent, fumes)"
     },
     {
       "id": 5,
-      "name": "other"
+      "name": "Other"
     },
     {
       "id": 6,
-      "name": "unknown"
+      "name": "Unknown"
     }
   ],
   "allergenTypes": [

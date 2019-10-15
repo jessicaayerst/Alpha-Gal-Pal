@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import AllergenManager from '../../modules/allergenManager';
 import './AllergensForm.css';
+import productTypeManager from '../../modules/productTypeManager';
+import allergenTypeManager from '../../modules/allergenTypeManager'
 
 class AllergensForm extends Component {
     state = {
@@ -10,7 +12,9 @@ class AllergensForm extends Component {
         tookMeds: "",
         medIntervention: "",
         userId: "",
+        productTypes: [],
         productTypeId: "",
+        allergenTypes: [],
         allergenTypeId: "",
         loadingStatus: false
     };
@@ -21,21 +25,33 @@ class AllergensForm extends Component {
         this.setState(stateToChange);
     };
 
+    componentDidMount(){
+        // Get all productType's from the Db
+        productTypeManager.getAll().then(parsedProductTypes => {
+            this.setState({productTypes: parsedProductTypes})
+        })
+        allergenTypeManager.getAll().then(parsedAllergenTypes => {
+            this.setState({allergenTypes: parsedAllergenTypes})
+        })
+    };
+
     constructNewAllergen = evt => {
         evt.preventDefault();
         if(this.state.productName === "" || this.state.notes === "") {
             window.alert("Please input product name and notes for allergen!")
         } else {
+
             this.setState({ loadingStatus: true });
+
             const allergen = {
                 productName: this.state.productName,
                 notes: this.state.notes,
                 symptoms: this.state.symptoms,
-                tookMeds: this.state.tookMeds,
-                medIntervention: this.state.medIntervention,
+                tookMeds: this.state.tookMeds === "on" ? true : false,
+                medIntervention: this.state.medIntervention === "on" ? true : false,
                 userId: 1,
-                productTypeId: 1,
-                allergenTypeId: 1
+                productTypeId: this.state.productTypeId,
+                allergenTypeId: this.state.allergenTypeId
             };
             AllergenManager.post(allergen)
             .then(() => this.props.history.push("/allergens"));
@@ -109,16 +125,35 @@ class AllergensForm extends Component {
                         </fieldset>
 
                         <fieldset>
-                            <label htmlFor="productTypeId">Select the type of product that caused your allergic reaction. You can be more specific about the product in the "Notes" section above:
-                            <select id="productTypeId">
-                                <option value={this.state.productTypeId}>Food</option>
-                                <option value={this.state.productTypeId}>Supplement(i.e. vitamins, herbs, protein powder)</option>
-                                <option value={this.state.productTypeId}>Medicine(OTC or prescribed)</option>
-                                <option value={this.state.productTypeId}>Environmental( i.e. lotion, laundry detergent, fumes)</option>
-                                <option value={this.state.productTypeId}>Other</option>
-                                <option value={this.state.productTypeId}>Unknown</option>
+                        <label htmlFor="productTypeId">Select which product type caused your allergic reaction:</label>
+                            <select
+                            id="productTypeId"
+                            value={this.state.productTypeId}
+                            onChange={this.handleFieldChange}
+                            >
+                                {this.state.productTypes.map(productType => (
+                                    <option key={productType.id} value={productType.id}>
+                                        {productType.name}
+                                    </option>
+                                ))}
                             </select>
-                            </label>
+
+                        </fieldset>
+
+                        <fieldset>
+                        <label htmlFor="allergenTypeId">Select which type of allergen caused your allergic reaction:</label>
+                            <select
+                            id="allergenTypeId"
+                            value={this.state.allergenTypeId}
+                            onChange={this.handleFieldChange}
+                            >
+                                {this.state.allergenTypes.map(allergenType => (
+                                    <option key={allergenType.id} value={allergenType.id}>
+                                        {allergenType.name}
+                                    </option>
+                                ))}
+                            </select>
+
                         </fieldset>
 
                         <fieldset>
