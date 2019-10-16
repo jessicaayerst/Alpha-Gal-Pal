@@ -2,13 +2,31 @@
   "users": [
     {
       "aud": "auth0|5d9df2e8dd1f490e19001d16",
-      "name": "me",
-      "id": 1
+      "id": 1,
+      "firstName": "Jessica",
+      "lastName": "Ayerst",
+      "zipCode": "41102",
+      "email": "me@me.com",
+      "dateOfBirth": "01/14/1981",
+      "optIn": true,
+      "diagnosisDate": "06/01/2016",
+      "formalDiagnosis": false,
+      "prescribedMeds": true,
+      "tickBite": true
     },
     {
       "aud": "auth0|5da092fc61287d0e1c737b8e",
-      "name": "you",
-      "id": 2
+      "id": 2,
+      "firstName": "",
+      "lastName": "",
+      "zipCode": "",
+      "email": "",
+      "dateOfBirth": "",
+      "optIn": "",
+      "diagnosisDate": "",
+      "formalDiagnosis": "",
+      "prescribedMeds": "",
+      "tickBite": ""
     }
   ],
   "allergens": [
@@ -33,6 +51,17 @@
       "productTypeId": "",
       "allergenTypeId": "",
       "id": 2
+    },
+    {
+      "productName": "Hamburger",
+      "notes": "I ate a burger from McDonald's around noon. And About 6pm started itching. Hives got really bad and I couldn't breathe so my mom called an ambulance.",
+      "symptoms": "hives, anaphalaxis",
+      "tookMeds": true,
+      "medIntervention": true,
+      "userId": 1,
+      "productTypeId": "",
+      "allergenTypeId": "2",
+      "id": 3
     }
   ],
   "productTypes": [

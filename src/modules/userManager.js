@@ -10,5 +10,14 @@ export default {
   getWithAllergens(id) {
     return fetch(`${remoteURL}/users/${id}?_embed=allergens`)
             .then(result => result.json())
+  },
+  update(editedUser) {
+    return fetch(`${remoteURL}/users/${editedUser.id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(editedUser)
+    }).then(data => data.json());
   }
 }

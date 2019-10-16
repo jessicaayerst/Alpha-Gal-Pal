@@ -34,7 +34,7 @@ class NavBar extends Component {
                 Sign Out
               </button>
               <li><Link className="nav-link" to="/home">Home</Link></li>
-            <li><Link className="nav-link" to="/userProfile">User Profile</Link></li>
+            <li><Link className="nav-link" to="/users">User Profile</Link></li>
             <li><Link className="nav-link" to="/allergens">Allergens</Link></li>
             <li><Link className="nav-link" to="/data">Data</Link></li>
             </React.Fragment>
