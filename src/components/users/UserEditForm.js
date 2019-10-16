@@ -46,7 +46,8 @@ class UserEditForm extends Component {
     }
 
     componentDidMount() {
-      userManager.get(this.state.userId)
+        const id = sessionStorage.getItem("credentials")
+      userManager.get(id)
       .then(user => {
           this.setState({
         firstName: user.firstName,
@@ -91,7 +92,7 @@ class UserEditForm extends Component {
                 value={this.state.lastName}
               />
 
-            
+
 
             </div>
             <div className="alignRight">

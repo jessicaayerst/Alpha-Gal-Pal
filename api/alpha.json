@@ -17,8 +17,8 @@
     {
       "aud": "auth0|5da092fc61287d0e1c737b8e",
       "id": 2,
-      "firstName": "",
-      "lastName": "",
+      "firstName": "John",
+      "lastName": "Guy",
       "zipCode": "",
       "email": "",
       "dateOfBirth": "",

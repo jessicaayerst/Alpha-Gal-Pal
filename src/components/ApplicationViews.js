@@ -11,6 +11,7 @@ import UserEditForm from './users/UserEditForm'
 class ApplicationViews extends Component {
 
   render() {
+
     return (
       <React.Fragment>
         <Route exact path="/home" render={(props) => {
@@ -28,10 +29,11 @@ class ApplicationViews extends Component {
         <Route path="/allergens/new" render={(props) => {
           return Auth0Client.isAuthenticated() ? <AllergensForm {...props} /> : Auth0Client.signIn()
         }} />
-        <Route exact path="/users" render={(props) => {
+
+        <Route exact path="/users/" render={(props) => {
           return Auth0Client.isAuthenticated() ? <UserDetail {...props} /> : Auth0Client.signIn()
         }} />
-        <Route path="/users/:userId(\d+)/edit" render={props => {
+        <Route path="/users/edit" render={props => {
           return Auth0Client.isAuthenticated() ? <UserEditForm {...props} /> : Auth0Client.signIn()
         }}
         />
