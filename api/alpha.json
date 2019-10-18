@@ -2,74 +2,169 @@
   "users": [
     {
       "aud": "auth0|5d9df2e8dd1f490e19001d16",
-      "name": "me",
+      "firstName": "Jessica",
+      "lastName": "Ayerst",
+      "zipCode": "41102",
+      "email": "me@me.com",
+      "dateOfBirth": "1981-01-14",
+      "optIn": true,
+      "diagnosisDate": "2016-06-01",
+      "formalDiagnosis": false,
+      "prescribedMeds": true,
+      "tickBite": true,
       "id": 1
     },
     {
       "aud": "auth0|5da092fc61287d0e1c737b8e",
-      "name": "you",
-      "id": 2
+      "id": 2,
+      "firstName": "John",
+      "lastName": "Guy",
+      "zipCode": "25701",
+      "email": "you@you.com",
+      "dateOfBirth": "1956-07-15",
+      "optIn": true,
+      "diagnosisDate": "2013-04-04",
+      "formalDiagnosis": true,
+      "prescribedMeds": true,
+      "tickBite": true
+    },
+    {
+      "aud": "auth0|5da9f994bed0f30c5da24e12",
+      "firstName": "Shane",
+      "lastName": "Ayerst",
+      "zipCode": "41101",
+      "email": "me1@me.com",
+      "dateOfBirth": "1971-04-18",
+      "optIn": true,
+      "diagnosisDate": "2015-07-01",
+      "formalDiagnosis": true,
+      "prescribedMeds": true,
+      "tickBite": true,
+      "id": 3
+    },
+    {
+      "aud": "auth0|5da9fa5acfbe760c5e0fc0de",
+      "firstName": "Judy",
+      "lastName": "Jetson",
+      "zipCode": "12345",
+      "email": "me2@me.com",
+      "dateOfBirth": "1965-11-11",
+      "optIn": true,
+      "diagnosisDate": "2008-10-25",
+      "tickBite": true,
+      "id": 4
     }
   ],
   "allergens": [
     {
-      "id": 1,
-      "productName": "french toast",
-      "notes": "This made me very sick every time I ate it.",
-      "symptoms": "hives",
+      "productName": "Ibuprofen",
+      "date": "2018-10-25",
+      "notes": "I took ibuprofen for a headache around 1pm and about 7pm broke out in the worst hives I've ever had. I took some benadryl and they went away in about 20 minutes.",
+      "symptoms": "hives, stomach pain",
       "tookMeds": true,
       "medIntervention": false,
       "userId": 1,
-      "productTypeId": 1,
-      "allergenTypeId": 2
+      "productTypeId": 3,
+      "allergenTypeId": 5,
+      "id": 1
     },
     {
-      "id": 2,
-      "productName": "ham",
-      "notes": "I had eaten it before but had no problem. I ate it two nights ago and went into anaphalaxis.",
-      "symptoms": "anaphalaxis",
+      "productName": "French Toast Sticks",
+      "date": "2018-10-25",
+      "notes": "I ate french toast sticks from Burger King and had hives and trouble breathing/wheezing about 6 hours later. I called BK and they said they deep fry pork sausage in the same fryer as the sticks.",
+      "symptoms": "hives, trouble breathing",
       "tookMeds": true,
-      "medIntervention": true,
+      "medIntervention": false,
       "userId": 2,
       "productTypeId": 1,
-      "allergenTypeId": 1
+      "allergenTypeId": 1,
+      "id": 2
     },
     {
-      "productName": "stuff",
-      "notes": "test",
-      "symptoms": "",
-      "tookMeds": "",
-      "medIntervention": "",
+      "productName": "Hamburger",
+      "date": "2018-10-25",
+      "notes": "I ate a burger from McDonald's around noon. And About 6pm started itching. Hives got really bad and I couldn't breathe so my mom called an ambulance.",
+      "symptoms": "hives, anaphalaxis",
+      "tookMeds": true,
+      "medIntervention": true,
+      "userId": 1,
+      "productTypeId": 1,
+      "allergenTypeId": 2,
+      "id": 3
+    },
+    {
+      "productName": "Ham",
+      "date": "2018-10-25",
+      "notes": "I had eaten small amounts of sausage before, so I thought I could still eat pork. Boy was I wrong! Worst reaction yet!",
+      "symptoms": "Hives, anaphalaxis, stomach pain",
+      "tookMeds": false,
+      "medIntervention": false,
       "userId": 1,
       "productTypeId": 1,
       "allergenTypeId": 1,
-      "id": 3
+      "id": 4
+    },
+    {
+      "productName": "Mashed Potatoes",
+      "date": "2018-10-25",
+      "notes": "I didn't realize mashed potatoes had dairy in them.",
+      "symptoms": "hives, stomach pain",
+      "tookMeds": true,
+      "medIntervention": false,
+      "userId": 4,
+      "productTypeId": 1,
+      "allergenTypeId": 3,
+      "id": 5
+    },
+    {
+      "productName": "Hamburger",
+      "date": "2018-10-25",
+      "notes": "This was the first reaction I had.",
+      "symptoms": "hives, stomach pain",
+      "tookMeds": true,
+      "medIntervention": false,
+      "userId": 3,
+      "productTypeId": 1,
+      "allergenTypeId": 2,
+      "id": 6
+    },
+    {
+      "productName": "Turkey Sausage",
+      "date": "2019-10-18",
+      "notes": "I thought turkey sausage was safe, but turns out the coating is made from beef products.",
+      "symptoms": "hives",
+      "tookMeds": true,
+      "medIntervention": false,
+      "userId": 4,
+      "productTypeId": 1,
+      "allergenTypeId": 2,
+      "id": 7
     }
   ],
   "productTypes": [
     {
       "id": 1,
-      "name": "food"
+      "name": "Food"
     },
     {
       "id": 2,
-      "name": "supplement"
+      "name": "Supplement(i.e. vitamins, herbs, protein powder)"
     },
     {
       "id": 3,
-      "name": "medicine"
+      "name": "Medicine(OTC or prescribed)"
     },
     {
       "id": 4,
-      "name": "environmental"
+      "name": "Environmental( i.e. lotion, laundry detergent, fumes)"
     },
     {
       "id": 5,
-      "name": "other"
+      "name": "Other"
     },
     {
       "id": 6,
-      "name": "unknown"
+      "name": "Unknown"
     }
   ],
   "allergenTypes": [

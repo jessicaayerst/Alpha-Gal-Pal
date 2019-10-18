@@ -39,7 +39,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .card{
-    width: 25vw;
+    width: 50vw;
     padding: 1em;
     margin: 1em;
     border: 1x solid gray;
