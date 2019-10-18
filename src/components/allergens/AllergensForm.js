@@ -7,11 +7,12 @@ import allergenTypeManager from '../../modules/allergenTypeManager'
 class AllergensForm extends Component {
     state = {
         productName: "",
+        date: "",
         notes: "",
         symptoms: "",
         tookMeds: false,
         medIntervention: false,
-        userId: "",
+        userId: parseInt(sessionStorage.getItem("credentials")),
         productTypes: [],
         productTypeId: "",
         allergenTypes: [],
@@ -20,7 +21,9 @@ class AllergensForm extends Component {
     };
 
     handleFieldChange = evt => {
+
         const stateToChange = {};
+
         stateToChange[evt.target.id] = evt.target.value;
         this.setState(stateToChange);
     };
@@ -42,6 +45,7 @@ class AllergensForm extends Component {
     };
 
     constructNewAllergen = evt => {
+
         evt.preventDefault();
         if(this.state.productName === "" || this.state.notes === "") {
             window.alert("Please input product name and notes for allergen!")
@@ -51,13 +55,14 @@ class AllergensForm extends Component {
 
             const allergen = {
                 productName: this.state.productName,
+                date: this.state.date,
                 notes: this.state.notes,
                 symptoms: this.state.symptoms,
                 tookMeds: this.state.tookMeds ,
                 medIntervention: this.state.medIntervention,
-                userId: 1,
-                productTypeId: this.state.productTypeId,
-                allergenTypeId: this.state.allergenTypeId
+                userId: this.state.userId,
+                productTypeId: this.state.productTypeId === "" ? 1 : parseInt(this.state.productTypeId),
+                allergenTypeId: this.state.allergenTypeId === "" ? 1 : parseInt(this.state.allergenTypeId)
             };
             AllergenManager.post(allergen)
             .then(() => this.props.history.push("/allergens"));
@@ -79,6 +84,20 @@ class AllergensForm extends Component {
                                 placeholder="Name of product"
                             />
                         </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <div className="formgrid">
+                            <label htmlFor="date">Date of Reaction: </label>
+              <input
+                type="date"
+                required
+                className="form-control"
+                onChange={this.handleFieldChange}
+                id="date"
+                value={this.state.date}
+              />
+                            </div>
                         </fieldset>
 
                         <fieldset>
@@ -140,6 +159,7 @@ class AllergensForm extends Component {
                         <label htmlFor="productTypeId">Select which product type caused your allergic reaction:</label>
                             <select
                             id="productTypeId"
+
                             value={this.state.productTypeId}
                             onChange={this.handleFieldChange}
                             >
@@ -156,6 +176,7 @@ class AllergensForm extends Component {
                         <label htmlFor="allergenTypeId">Select which type of allergen caused your allergic reaction:</label>
                             <select
                             id="allergenTypeId"
+
                             value={this.state.allergenTypeId}
                             onChange={this.handleFieldChange}
                             >

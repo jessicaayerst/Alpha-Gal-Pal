@@ -108,6 +108,16 @@ class UserEditForm extends Component {
                 value={this.state.zipCode}
               />
 
+              <label htmlFor="email">Email: </label>
+              <input
+                type="text"
+                required
+                className="form-control"
+                onChange={this.handleFieldChange}
+                id="email"
+                value={this.state.email}
+              />
+
             <label htmlFor="dateOfBirth">Date of Birth: </label>
               <input
                 type="date"
