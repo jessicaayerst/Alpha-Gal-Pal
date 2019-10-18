@@ -9,8 +9,8 @@ class AllergensForm extends Component {
         productName: "",
         notes: "",
         symptoms: "",
-        tookMeds: "",
-        medIntervention: "",
+        tookMeds: false,
+        medIntervention: false,
         userId: "",
         productTypes: [],
         productTypeId: "",
@@ -24,6 +24,12 @@ class AllergensForm extends Component {
         stateToChange[evt.target.id] = evt.target.value;
         this.setState(stateToChange);
     };
+
+    handleCheckBox = evt => {
+        const stateToChange = {}
+        stateToChange[evt.target.id] = evt.target.checked
+        this.setState(stateToChange)
+      }
 
     componentDidMount(){
         // Get all productType's from the Db
@@ -47,8 +53,8 @@ class AllergensForm extends Component {
                 productName: this.state.productName,
                 notes: this.state.notes,
                 symptoms: this.state.symptoms,
-                tookMeds: this.state.tookMeds === "on" ? true : false,
-                medIntervention: this.state.medIntervention === "on" ? true : false,
+                tookMeds: this.state.tookMeds ,
+                medIntervention: this.state.medIntervention,
                 userId: 1,
                 productTypeId: this.state.productTypeId,
                 allergenTypeId: this.state.allergenTypeId
@@ -107,8 +113,11 @@ class AllergensForm extends Component {
                             <input
                                 id="tookMeds"
                                 type="checkbox"
+                                required
+                className="form-control"
                                 checked={this.state.tookMeds}
-                                onChange={this.handleFieldChange} />
+                                onChange={this.handleCheckBox}
+                                value="false"/>
                             </label>
                             </div>
                         </fieldset>
@@ -118,8 +127,11 @@ class AllergensForm extends Component {
                             <input
                                 id="medIntervention"
                                 type="checkbox"
+                                required
+                className="form-control"
                                 checked={this.state.medIntervention}
-                                onChange={this.handleFieldChange} />
+                                onChange={this.handleCheckBox}
+                                value="false"/>
                             </label>
                             </div>
                         </fieldset>

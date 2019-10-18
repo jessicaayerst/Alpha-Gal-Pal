@@ -25,12 +25,13 @@ class UserDetail extends Component {
     //get(id) from UserManager and hang on to the data; put it into state
     const id = sessionStorage.getItem("credentials")
     console.log("this is session", id)
-    
+
     userManager.get(id)
     .then((user) => {
       console.log("this is user", user)
 
       this.setState({
+        id: user.id,
         firstName: user.firstName,
         lastName: user.lastName,
         zipCode: user.zipCode,

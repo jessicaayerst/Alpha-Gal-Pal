@@ -11,8 +11,8 @@ export default {
     return fetch(`${remoteURL}/users/${id}?_embed=allergens`)
             .then(result => result.json())
   },
-  update(editedUser) {
-    return fetch(`${remoteURL}/users/${editedUser.id}`, {
+  update(editedUser, id) {
+    return fetch(`${remoteURL}/users/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json"

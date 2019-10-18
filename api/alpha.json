@@ -2,17 +2,17 @@
   "users": [
     {
       "aud": "auth0|5d9df2e8dd1f490e19001d16",
-      "id": 1,
       "firstName": "Jessica",
       "lastName": "Ayerst",
       "zipCode": "41102",
       "email": "me@me.com",
-      "dateOfBirth": "01/14/1981",
+      "dateOfBirth": "1981-01-14",
       "optIn": true,
-      "diagnosisDate": "06/01/2016",
+      "diagnosisDate": "2016-06-01",
       "formalDiagnosis": false,
       "prescribedMeds": true,
-      "tickBite": true
+      "tickBite": true,
+      "id": 1
     },
     {
       "aud": "auth0|5da092fc61287d0e1c737b8e",
@@ -62,6 +62,17 @@
       "productTypeId": "",
       "allergenTypeId": "2",
       "id": 3
+    },
+    {
+      "productName": "Ham",
+      "notes": "I had eaten small amounts of sausage before, so I thought I could still eat pork. Boy was I wrong! Worst reaction yet!",
+      "symptoms": "Hives, anaphalaxis, stomach pain",
+      "tookMeds": false,
+      "medIntervention": false,
+      "userId": 1,
+      "productTypeId": "",
+      "allergenTypeId": "",
+      "id": 4
     }
   ],
   "productTypes": [

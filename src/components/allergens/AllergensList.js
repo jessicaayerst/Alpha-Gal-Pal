@@ -12,20 +12,23 @@ import React, { Component } from 'react'
 
         deleteAllergen = id => {
             AllergenManager.delete(id)
-            .then(() => {
-              AllergenManager.getAll()
+            .then(() =>
+              AllergenManager.getAll())
               .then((newAllergens) => {
                 this.setState({
                     allergens: newAllergens
                 })
               })
-            })
+
           }
     componentDidMount(){
         console.log("Allergen LIST: ComponentDidMount");
         //getAll from AllergenManager and hang on to that data; put it in state
         // AllergenManager.getAll()
-        UserManager.getWithAllergens(1)
+
+        const id = sessionStorage.getItem("credentials")
+
+        UserManager.getWithAllergens(id)
         .then((allergensFromData) => {
             console.log(allergensFromData.allergens)
             this.setState({
