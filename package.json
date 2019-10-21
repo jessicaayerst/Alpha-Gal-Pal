@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "auth0-js": "^9.11.3",
+    "google-map-react": "^1.1.5",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-router-dom": "^5.1.2",
