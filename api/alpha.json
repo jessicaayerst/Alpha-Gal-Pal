@@ -58,7 +58,7 @@
   "allergens": [
     {
       "productName": "Ibuprofen",
-      "date": "2018-10-25",
+      "date": "2018-10-16",
       "notes": "I took ibuprofen for a headache around 1pm and about 7pm broke out in the worst hives I've ever had. I took some benadryl and they went away in about 20 minutes.",
       "symptoms": "hives, stomach pain",
       "tookMeds": true,
@@ -94,7 +94,7 @@
     },
     {
       "productName": "Ham",
-      "date": "2018-10-25",
+      "date": "2018-10-10",
       "notes": "I had eaten small amounts of sausage before, so I thought I could still eat pork. Boy was I wrong! Worst reaction yet!",
       "symptoms": "Hives, anaphalaxis, stomach pain",
       "tookMeds": false,

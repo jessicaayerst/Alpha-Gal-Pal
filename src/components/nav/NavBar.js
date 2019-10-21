@@ -35,8 +35,9 @@ class NavBar extends Component {
               </button>
               <li><Link className="nav-link" to="/home">Home</Link></li>
             <li><Link className="nav-link" to="/users">User Profile</Link></li>
-            <li><Link className="nav-link" to="/allergens">Allergens</Link></li>
+            <li><Link className="nav-link" to="/allergens">Reaction Tracker</Link></li>
             <li><Link className="nav-link" to="/data">Data</Link></li>
+            <li><Link className="nav-link" to="/map">User Map</Link></li>
             </React.Fragment>
         )}
           </ul>

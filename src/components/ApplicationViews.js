@@ -7,6 +7,7 @@ import Auth0Client from "./auth/Auth";
 import AllergensForm from './allergens/AllergensForm'
 import UserDetail from './users/UserDetail'
 import UserEditForm from './users/UserEditForm'
+import SimpleMap from './data/ZipCodeMap'
 
 class ApplicationViews extends Component {
 
@@ -37,6 +38,11 @@ class ApplicationViews extends Component {
           return Auth0Client.isAuthenticated() ? <UserEditForm {...props} /> : Auth0Client.signIn()
         }}
         />
+        <Route exact path="/map" render={(props) => {
+          return Auth0Client.isAuthenticated() ? <SimpleMap {...props} /> : Auth0Client.signIn()
+        }}
+        />
+
         <Route exact path="/callback" component={Callback} />
       </React.Fragment>
     )
