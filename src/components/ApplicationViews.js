@@ -7,7 +7,7 @@ import Auth0Client from "./auth/Auth";
 import AllergensForm from './allergens/AllergensForm'
 import UserDetail from './users/UserDetail'
 import UserEditForm from './users/UserEditForm'
-import SimpleMap from './data/ZipCodeMap'
+import SimpleMap from './data/ZipCodeMap2'
 
 class ApplicationViews extends Component {
 
