@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import userManager from '../../modules/userManager'
 import AllergenCard from '../animal/AllergenCard'
+import { arrayExpression } from '@babel/types'
 
 class UserWithAllergens extends Component {
     state = {
@@ -9,10 +10,11 @@ class UserWithAllergens extends Component {
     }
 
     componentDidMount(){
-        //got here now make call to get employee with animal
+        //got here now make call to get employee with allergen
         userManager.getWithAllergens(this.props.match.params.userId)
             .then((userObject) => {
                 console.log(userObject)
+               
             this.setState({
               user: userObject,
               allergens: userObject.allergens,
