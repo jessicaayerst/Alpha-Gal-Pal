@@ -23,4 +23,6 @@ yarn-debug.log*
 yarn-error.log*
 
 src/components/auth/AuthConfig.js
-src/components/data/ZipCodeMap.js
+src/components/data/ZipCodeMap2.js
+src/modules/zipManager2.js
+

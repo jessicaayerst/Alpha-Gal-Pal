@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
     //import the components we will need
     import AllergensCard from './AllergensCard'
-    import AllergenManager from '../../modules/allergenManager'
+    import allergenManager from '../../modules/allergenManager'
     import UserManager from '../../modules/userManager'
 
     class AllergensList extends Component {
@@ -11,9 +11,9 @@ import React, { Component } from 'react'
         }
 
         deleteAllergen = id => {
-            AllergenManager.delete(id)
+            allergenManager.delete(id)
             .then(() =>
-              AllergenManager.getAll())
+              allergenManager.getAll())
               .then((newAllergens) => {
                 this.setState({
                     allergens: newAllergens

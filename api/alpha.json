@@ -139,6 +139,18 @@
       "productTypeId": 1,
       "allergenTypeId": 2,
       "id": 7
+    },
+    {
+      "productName": "Coffee Creamer",
+      "date": "2019-10-21",
+      "notes": "I never had a reaction to creamer before, but it was the only thing different that I had today. And it is a new brand of creamer, \"Dairy Life\", from Wal-mart.",
+      "symptoms": "hives",
+      "tookMeds": true,
+      "medIntervention": false,
+      "userId": 1,
+      "productTypeId": 1,
+      "allergenTypeId": 6,
+      "id": 8
     }
   ],
   "productTypes": [
