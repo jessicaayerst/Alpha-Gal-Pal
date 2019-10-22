@@ -31,6 +31,9 @@ import React, { Component } from 'react'
         UserManager.getWithAllergens(id)
         .then((allergensFromData) => {
             console.log(allergensFromData.allergens)
+            allergensFromData.allergens.sort(function(a, b){
+                return new Date(b.date) - new Date(a.date);
+              });
             this.setState({
                 allergens: allergensFromData.allergens
             })

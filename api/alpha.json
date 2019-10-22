@@ -19,7 +19,7 @@
       "id": 2,
       "firstName": "John",
       "lastName": "Guy",
-      "zipCode": "25701",
+      "zipCode": "60004",
       "email": "you@you.com",
       "dateOfBirth": "1956-07-15",
       "optIn": true,
@@ -32,7 +32,7 @@
       "aud": "auth0|5da9f994bed0f30c5da24e12",
       "firstName": "Shane",
       "lastName": "Ayerst",
-      "zipCode": "41101",
+      "zipCode": "79936",
       "email": "me1@me.com",
       "dateOfBirth": "1971-04-18",
       "optIn": true,
@@ -51,6 +51,7 @@
       "dateOfBirth": "1965-11-11",
       "optIn": true,
       "diagnosisDate": "2008-10-25",
+      "formalDiagnosis": true,
       "tickBite": true,
       "id": 4
     }
