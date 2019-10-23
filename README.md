@@ -5,8 +5,8 @@ This application was created to help people with Alpha-Gal allergy (red meat all
 ## Motivation
 
  Alpha-Gal allergy is a little-known tick-borne illness that is affecting more and more people every year. Like Lymes Disease, Alpha-Gal is often misdiagnosed, and it can be fatal. Since so little information about Alpha-Gal allergy exists, this project is an attempt to spread awareness about the disease, while also offering support to the people suffering from it.
+![](src/components/images/homeScreen.png)
 
-## Screenshots
 
 ## Tech/Framework Used
 
@@ -125,10 +125,13 @@ import SimpleMap from './data/publicZipCodeMap.js'
 ## How to Use?
 
 1. Once you are logged in with Auth0, create a User Profile, by clicking "Edit User Profile".
-![first](firstGif.gif)
+![Alt Text](src/components/images/firstGif.gif)
 2. Then go to the "Symptom Tracker" page and click "Input New Allergen". Here, you can add the details of the allergic reactions you have had. These will be listed in chronological order, by the most recent reaction.
+![Alt Text](src/components/images/secondGif.gif)
 3. The "Data Results" page will show you real-time data, which is gathered from all users who have given permission for their data to be used in the research project.
+![Alt Text](src/components/images/thirdGif.gif)
 4. Clicking on the "User Map" page will show you the locations of all current registered users.
+![Alt Text](src/components/images/lastGif.gif)
 
 ## How to Contribute?
 
