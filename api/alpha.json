@@ -52,6 +52,7 @@
       "optIn": true,
       "diagnosisDate": "2008-10-25",
       "formalDiagnosis": true,
+      "prescribedMeds": false,
       "tickBite": true,
       "id": 4
     },
@@ -63,7 +64,9 @@
       "email": "wren.cragle1@gmail.com",
       "dateOfBirth": "2006-02-20",
       "optIn": true,
+      "formalDiagnosis": false,
       "diagnosisDate": "2008-10-30",
+      "prescribedMeds": false,
       "tickBite": true,
       "id": 5
     },
@@ -76,6 +79,7 @@
       "dateOfBirth": "1903-08-01",
       "optIn": true,
       "formalDiagnosis": true,
+      "diagnosisDate": "2017-05-01",
       "prescribedMeds": true,
       "tickBite": true,
       "id": 6
@@ -88,10 +92,25 @@
       "email": "johnspace@space.com",
       "dateOfBirth": "2001-06-06",
       "optIn": true,
+      "formalDiagnosis": true,
       "diagnosisDate": "2017-05-01",
       "prescribedMeds": true,
       "tickBite": true,
       "id": 8
+    },
+    {
+      "aud": "auth0|5db09daaeb35be0dd8e9618a",
+      "firstName": "Johnny",
+      "lastName": "Spacey",
+      "zipCode": "34212",
+      "email": "spacex@spacex.com",
+      "dateOfBirth": "1971-01-01",
+      "optIn": true,
+      "diagnosisDate": "2018-01-01",
+      "formalDiagnosis": true,
+      "prescribedMeds": true,
+      "tickBite": true,
+      "id": 9
     }
   ],
   "allergens": [
