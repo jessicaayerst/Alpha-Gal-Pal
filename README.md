@@ -10,9 +10,12 @@ This application was created to help people with Alpha-Gal allergy (red meat all
 
 ## Tech/Framework Used
 
+React Javascript
+
 ## Features
 
-## Code Example
+- **Symptom Tracker** allows users to input allergic reactions into the database so that they can track how often they are having reactions, what types of products are causing reactions, the dates of each reaction, and the symptoms they experienced.
+- **Real-Time User Data** is generated each time a user inputs a new allergic reaction. Researchers can use the database to track what percentage of users had to take medication for allergic reactions, the percentage of users who had to go to the ER for allergic reactions, the percentage of users who are formally diagnosed, etc. The data shown on the *Data Results* page are just a scratch on the surface of how the data collected through this project can be used.
 
 ## Installation
 
@@ -105,7 +108,14 @@ npm install --save google-map-react
 
 3. In the directory named "data", open up the file named "publicZipCodeMap.js"
 4. There are 2 places where your Google Maps API Key needs to be placed in this file. Remember, to add this file to your .gitIgnore file so that your API Key remains secure.
-5. After putting your API key in and adding the file to gitIgnore, then you can un-comment the code. The component "SimpleMap" should work correctly now, and you should see a map with the location of all users pinpointed. This map will not work with zip codes that are outside of the United States, and the page will not load if there are any users in the database with non-US zip codes.
+5. After putting your API key in and adding the file to gitIgnore, then you can un-comment the code.
+6. Add:
+```
+import SimpleMap from './data/publicZipCodeMap.js'
+```
+ to the ApplicationViews.js file. Also delete this line: import SimpleMap from './data/ZipCodeMap2'
+
+7. The component "SimpleMap" should work correctly now, and you should see a map with the location of all users pinpointed. This map will not work with zip codes that are outside of the United States, and the page will not load if there are any users in the database with non-US zip codes.
 
 
 
@@ -114,4 +124,18 @@ npm install --save google-map-react
 
 ## How to Use?
 
+1. Once you are logged in with Auth0, create a User Profile, by clicking "Edit User Profile".
+![first](firstGif.gif)
+2. Then go to the "Symptom Tracker" page and click "Input New Allergen". Here, you can add the details of the allergic reactions you have had. These will be listed in chronological order, by the most recent reaction.
+3. The "Data Results" page will show you real-time data, which is gathered from all users who have given permission for their data to be used in the research project.
+4. Clicking on the "User Map" page will show you the locations of all current registered users.
 
+## How to Contribute?
+
+1. Clone repo and create a new branch: $ git checkout https://github.com/jessicaayerst/Alpha-Gal-Pal.git -b name_for_new_branch.
+2. Make changes and test
+3. Submit Pull Request with comprehensive description of changes
+
+## Donations
+
+This is free, open-source software. If you'd like to support the development of future projects, or say thanks for this one, you can donate BCH at

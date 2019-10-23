@@ -84,6 +84,19 @@
       "aud": "auth0|5dafa312e7d02d0c5c754ad5",
       "zipCode": "02801",
       "id": 7
+    },
+    {
+      "aud": "auth0|5db09221d29f440c6560573c",
+      "firstName": "John",
+      "lastName": "Space",
+      "zipCode": "25874",
+      "email": "johnspace@space.com",
+      "dateOfBirth": "2001-06-06",
+      "optIn": true,
+      "diagnosisDate": "2017-05-01",
+      "prescribedMeds": true,
+      "tickBite": true,
+      "id": 8
     }
   ],
   "allergens": [
