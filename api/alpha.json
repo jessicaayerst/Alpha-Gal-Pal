@@ -54,6 +54,36 @@
       "formalDiagnosis": true,
       "tickBite": true,
       "id": 4
+    },
+    {
+      "aud": "auth0|5daf9f0c8bc0400c5c055024",
+      "firstName": "wren",
+      "lastName": "cragle",
+      "zipCode": "58001",
+      "email": "wren.cragle1@gmail.com",
+      "dateOfBirth": "2006-02-20",
+      "optIn": true,
+      "diagnosisDate": "2008-10-30",
+      "tickBite": true,
+      "id": 5
+    },
+    {
+      "aud": "auth0|5dafa1b27555570c61e04300",
+      "firstName": "bobby",
+      "lastName": "boo",
+      "zipCode": "69101",
+      "email": "bobby.white@bobbymail.com",
+      "dateOfBirth": "1903-08-01",
+      "optIn": true,
+      "formalDiagnosis": true,
+      "prescribedMeds": true,
+      "tickBite": true,
+      "id": 6
+    },
+    {
+      "aud": "auth0|5dafa312e7d02d0c5c754ad5",
+      "zipCode": "02801",
+      "id": 7
     }
   ],
   "allergens": [
@@ -152,6 +182,54 @@
       "productTypeId": 1,
       "allergenTypeId": 6,
       "id": 8
+    },
+    {
+      "productName": "air",
+      "date": "2222-02-22",
+      "notes": "i drank air and dies",
+      "symptoms": "air causes no air",
+      "tookMeds": true,
+      "medIntervention": true,
+      "userId": 5,
+      "productTypeId": 4,
+      "allergenTypeId": 5,
+      "id": 9
+    },
+    {
+      "productName": "dfgh",
+      "date": "2212-02-22",
+      "notes": "water",
+      "symptoms": "??",
+      "tookMeds": true,
+      "medIntervention": true,
+      "userId": 5,
+      "productTypeId": 1,
+      "allergenTypeId": 5,
+      "id": 10
+    },
+    {
+      "productName": "glass",
+      "date": "2018-08-08",
+      "notes": "it killed me then i turned into a zombie",
+      "symptoms": "i felt like i was going to throgh up",
+      "tookMeds": true,
+      "medIntervention": true,
+      "userId": 6,
+      "productTypeId": 5,
+      "allergenTypeId": 5,
+      "id": 11
+    },
+    {
+      "productName": "my dogs teeth",
+      "date": "2016-10-10",
+      "notes": "i had to get stitches",
+      "symptoms": "rabeys",
+      "tookMeds": true,
+      "medIntervention": true,
+      "userId": 7,
+      "productTypeId": 4,
+      "allergenTypeId": 5,
+      "id": 12
     }
   ],
   "productTypes": [

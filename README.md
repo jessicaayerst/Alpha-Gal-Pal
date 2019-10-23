@@ -1,68 +1,117 @@
+# Alpha-Gal Pal
+
+This application was created to help people with Alpha-Gal allergy (red meat allergy) keep track of their symptoms, so that they may communicate more fully with medical professionals. It is also geared to collect user data (with permission) so that more information about the allergy and the people suffering from it can be utilized by researchers.
+
+## Motivation
+
+ Alpha-Gal allergy is a little-known tick-borne illness that is affecting more and more people every year. Like Lymes Disease, Alpha-Gal is often misdiagnosed, and it can be fatal. Since so little information about Alpha-Gal allergy exists, this project is an attempt to spread awareness about the disease, while also offering support to the people suffering from it.
+
+## Screenshots
+
+## Tech/Framework Used
+
+## Features
+
+## Code Example
+
+## Installation
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+### Installing the Project
+
+Clone the source locally:
+```
+git clone https://github.com/jessicaayerst/Alpha-Gal-Pal.git
+```
+
+Then:
+```
+cd alpha-gal/
+```
 
 In the project directory, you can run:
 
-### `npm start`
+```
+npm install
+```
+
+### Running the Project
+Then:
+
+```
+npm start
+```
 
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+You will also need to run the mock API JSON server. From the project directory, you can:
 
-### `npm test`
+```
+cd api
+```
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Then run:
 
-### `npm run build`
+```
+json-server -p 5002 -w alpha.json
+```
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Installing/Using Auth0
+ Since the app uses Auth0 as the login framework, you will need to create an Auth0 account by clicking [here](https://auth0.com/signup) and then do this:
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+1. On the left side of the page, select "Applications" from the menu bar
+2. Click on "Create a new Application"
+3. Click on "Single Page Application"
+4. Select "React"
+5. Now your App is created. Click on the "Settings" tab to see your App's info.
+6. In the settings tab of your app, under "Allowed callback URLs", paste this URL: http://localhost:3000/callback
+7. Under "Allowed Web Origins", paste this URL: http://localhost:3000
+8. Under "Allowed Logout URL's", paste this URL: http://localhost:3000
+9. Click "Save Changes"
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Now Install Auth0 in your directory:
 
-### `npm run eject`
+```
+npm install auth0-js
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Now GitIgnore your domain and Client ID:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. In your auth directory, create a new file called AuthConfig.js.
+Add AuthConfig.js to your .gitignore. (Once you've done that, run git status to make sure it worked. You should not see AuthConfig.js in the list.)
+2. Here's an example of what your AuthConfig.js file should look like. You'll need to copy and paste your own domain and clientID here, whicn you'll find under the settings tab of your application.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```
+export default {
+ domain: 'YOUR DOMAIN',
+ clientId: 'YOUR CLIENT ID'
+}
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+3. Now you should see the Auth0 framework pop up when you run the application. You can login using a username and password of your choice. In order to see the data results page in full, you can make several accounts, and have each account have several "allergens". Then, you will be able to see how the data results percentages change as the data changes.
 
-## Learn More
+### Installing the Google Maps API
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The "User Map" page of this application uses Google Maps to show where all the users reside. This data is gathered using the zip codes the users enter on the "User Profile" page. In order for this page to load and work correctly, you must install Google Maps API and also obtain a key(password). Remember, to always put code using your key in a .gitIgnore file.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Request a Google Maps API key [here](https://developers.google.com/maps/documentation/javascript/tutorial?source=post_page-----9694a475f00a----------------------).
+2. Install google-map-react into the project directory.
 
-### Code Splitting
+```
+npm install --save google-map-react
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+3. In the directory named "data", open up the file named "publicZipCodeMap.js"
+4. There are 2 places where your Google Maps API Key needs to be placed in this file. Remember, to add this file to your .gitIgnore file so that your API Key remains secure.
+5. After putting your API key in and adding the file to gitIgnore, then you can un-comment the code. The component "SimpleMap" should work correctly now, and you should see a map with the location of all users pinpointed. This map will not work with zip codes that are outside of the United States, and the page will not load if there are any users in the database with non-US zip codes.
 
-### Analyzing the Bundle Size
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
-### Making a Progressive Web App
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
 
-### Advanced Configuration
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+## How to Use?
 
-### Deployment
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
