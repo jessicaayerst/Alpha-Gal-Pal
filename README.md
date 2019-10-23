@@ -17,8 +17,6 @@ React Javascript
 - **Symptom Tracker** allows users to input allergic reactions into the database so that they can track how often they are having reactions, what types of products are causing reactions, the dates of each reaction, and the symptoms they experienced.
 - **Real-Time User Data** is generated each time a user inputs a new allergic reaction. Researchers can use the database to track what percentage of users had to take medication for allergic reactions, the percentage of users who had to go to the ER for allergic reactions, the percentage of users who are formally diagnosed, etc. The data shown on the *Data Results* page are just a scratch on the surface of how the data collected through this project can be used.
 
-## Code Example
-
 ## Installation
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -127,6 +125,7 @@ import SimpleMap from './data/publicZipCodeMap.js'
 ## How to Use?
 
 1. Once you are logged in with Auth0, create a User Profile, by clicking "Edit User Profile".
+![first](firstGif.gif)
 2. Then go to the "Symptom Tracker" page and click "Input New Allergen". Here, you can add the details of the allergic reactions you have had. These will be listed in chronological order, by the most recent reaction.
 3. The "Data Results" page will show you real-time data, which is gathered from all users who have given permission for their data to be used in the research project.
 4. Clicking on the "User Map" page will show you the locations of all current registered users.
