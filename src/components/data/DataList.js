@@ -30,7 +30,7 @@ getNumberTrueTookMeds(){
                 result++;
             }
         }
-        var percentTookMeds = (result/allergensFromData.length)*100
+        var percentTookMeds = Math.round((result/allergensFromData.length)*100)
         console.log(percentTookMeds);
         this.setState({
             tookMeds: percentTookMeds
@@ -45,7 +45,7 @@ getUsersFormallyDiagnosed(){
     const formalDiagnoses = usersFromData.filter(
         currentUser => currentUser.formalDiagnosis === true
     )
-    var percentFormallyDiagnosed = (formalDiagnoses.length/usersFromData.length)*100
+    var percentFormallyDiagnosed = Math.round((formalDiagnoses.length/usersFromData.length)*100)
         console.log(percentFormallyDiagnosed)
         this.setState({
             formalDiagnosis: percentFormallyDiagnosed
@@ -59,7 +59,7 @@ getUsersBitByTick(){
         const bitByTick = usersFromData.filter(
             currentUser => currentUser.tickBite === true
         )
-        var percentBitByTick = (bitByTick.length/usersFromData.length)*100
+        var percentBitByTick = Math.round((bitByTick.length/usersFromData.length)*100)
         console.log(percentBitByTick)
         this.setState({
             tickBite: percentBitByTick
