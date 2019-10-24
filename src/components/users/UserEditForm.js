@@ -65,11 +65,12 @@ class UserEditForm extends Component {
         zipCode: user.zipCode,
         email: user.email,
         dateOfBirth: user.dateOfBirth,
-        optIn: false,
+        // optIn was showing up as undefined if it wasn't checked initially, so I had to put a ternary operation in to say that if it was undefined, to save it as false, and if not, to save it as true. I had to do this for several keys following this as well.
+        optIn: user.optIn === undefined ? false : user.optIn,
         diagnosisDate: user.diagnosisDate,
-        formalDiagnosis: false,
-        prescribedMeds: false,
-        tickBite: false,
+        formalDiagnosis: user.formalDiagnosis === undefined ? false : user.formalDiagnosis,
+        prescribedMeds: user.prescribedMeds === undefined ? false : user.prescribedMeds,
+        tickBite: user.tickBite === undefined ? false : user.tickBite,
         loadingStatus: false,
 
           });
