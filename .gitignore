@@ -22,6 +22,8 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+# Add any components that have secure information that should not be posted on GitHub. This includes user information from Auth0 and google maps API keys.
+
 src/components/auth/AuthConfig.js
 src/components/data/ZipCodeMap2.js
 

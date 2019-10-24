@@ -64,8 +64,8 @@
       "email": "wren.cragle1@gmail.com",
       "dateOfBirth": "2006-02-20",
       "optIn": true,
-      "formalDiagnosis": false,
       "diagnosisDate": "2008-10-30",
+      "formalDiagnosis": false,
       "prescribedMeds": false,
       "tickBite": true,
       "id": 5
@@ -78,8 +78,8 @@
       "email": "bobby.white@bobbymail.com",
       "dateOfBirth": "1903-08-01",
       "optIn": true,
-      "formalDiagnosis": true,
       "diagnosisDate": "2017-05-01",
+      "formalDiagnosis": true,
       "prescribedMeds": true,
       "tickBite": true,
       "id": 6
@@ -92,8 +92,8 @@
       "email": "johnspace@space.com",
       "dateOfBirth": "2001-06-06",
       "optIn": true,
-      "formalDiagnosis": true,
       "diagnosisDate": "2017-05-01",
+      "formalDiagnosis": true,
       "prescribedMeds": true,
       "tickBite": true,
       "id": 8
@@ -107,10 +107,38 @@
       "dateOfBirth": "1971-01-01",
       "optIn": true,
       "diagnosisDate": "2018-01-01",
-      "formalDiagnosis": true,
+      "formalDiagnosis": false,
       "prescribedMeds": true,
       "tickBite": true,
       "id": 9
+    },
+    {
+      "aud": "auth0|5db1aa917555570c61e06b4d",
+      "firstName": "Sara",
+      "lastName": "Sound",
+      "zipCode": "45638",
+      "email": "test@test.com",
+      "dateOfBirth": "1978-07-08",
+      "optIn": true,
+      "diagnosisDate": "2016-01-06",
+      "formalDiagnosis": false,
+      "prescribedMeds": true,
+      "tickBite": false,
+      "id": 10
+    },
+    {
+      "aud": "auth0|5db1bf136aea6b0c655f2bc1",
+      "firstName": "Jill",
+      "lastName": "Scott",
+      "zipCode": "17682",
+      "email": "test2@test.com",
+      "dateOfBirth": "1962-05-05",
+      "optIn": true,
+      "diagnosisDate": "2015-02-25",
+      "formalDiagnosis": false,
+      "prescribedMeds": false,
+      "tickBite": true,
+      "id": 11
     }
   ],
   "allergens": [
@@ -269,6 +297,30 @@
       "productTypeId": 1,
       "allergenTypeId": 6,
       "id": 13
+    },
+    {
+      "productName": "Beef Hot Dogs",
+      "date": "2019-10-23",
+      "notes": "I had two hot dogs from Stewart's Hot Dogs in Huntington, WV around noon yesterday. Around 6pm, I started getting itchy, red welts all over my body. Soon, I was covered in hives. I took benadryl and it helped about 20 minutes later I was fine.",
+      "symptoms": "hives",
+      "tookMeds": true,
+      "medIntervention": false,
+      "userId": 10,
+      "productTypeId": 1,
+      "allergenTypeId": 2,
+      "id": 14
+    },
+    {
+      "productName": "Cheddar Cheese",
+      "date": "2018-01-25",
+      "notes": "I had severe stomach cramping about five hours after eating cheddar cheese on a grilled cheese sandwich.",
+      "symptoms": "I had stomach cramps and pain and bloating, hives, itchy red welts, and wheezing.",
+      "tookMeds": true,
+      "medIntervention": true,
+      "userId": 10,
+      "productTypeId": 1,
+      "allergenTypeId": 3,
+      "id": 15
     }
   ],
   "productTypes": [
