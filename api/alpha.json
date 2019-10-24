@@ -130,7 +130,7 @@
       "aud": "auth0|5db1bf136aea6b0c655f2bc1",
       "firstName": "Jill",
       "lastName": "Scott",
-      "zipCode": "17682",
+      "zipCode": "10014",
       "email": "test2@test.com",
       "dateOfBirth": "1962-05-05",
       "optIn": true,
@@ -321,6 +321,18 @@
       "productTypeId": 1,
       "allergenTypeId": 3,
       "id": 15
+    },
+    {
+      "productName": "Nathan's Hot Dogs",
+      "date": "2019-09-03",
+      "notes": "I ate some Nathan's hot dogs for a Labor Day party. That was at around 6pm. At about midnight I woke up and I was broke out in hives all over my body. My throat started closing off so I had to call an ambulance.",
+      "symptoms": "hives, stomach cramps, anaphalaxis, throat closing, wheezing",
+      "tookMeds": true,
+      "medIntervention": true,
+      "userId": 11,
+      "productTypeId": 1,
+      "allergenTypeId": 1,
+      "id": 16
     }
   ],
   "productTypes": [
