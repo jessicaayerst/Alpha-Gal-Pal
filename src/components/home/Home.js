@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 
+// Render a "home" component by simply listing information about the application into html
 class Home extends Component {
     render() {
         return (

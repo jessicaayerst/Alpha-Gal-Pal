@@ -10,28 +10,31 @@ class UserEditForm extends Component {
         zipCode: "",
         email: "",
         dateOfBirth: "",
-        optIn: "",
+        optIn: false,
         diagnosisDate: "",
-        formalDiagnosis: "",
-        prescribedMeds: "",
-        tickBite: "",
+        formalDiagnosis: false,
+        prescribedMeds: false,
+        tickBite: false,
         loadingStatus: true,
     };
-
+// Define what happens when the user types into an input field. All changes are immediately saved in state.
     handleFieldChange = evt => {
       const stateToChange = {}
       stateToChange[evt.target.id] = evt.target.value
 
       this.setState(stateToChange)
     };
+    // When the user checks a checkbox, then it is saved in state.
     handleCheckBox = evt => {
       const stateToChange = {}
       stateToChange[evt.target.id] = evt.target.checked
       this.setState(stateToChange)
     }
+    // Define a function that updates the user's profile
     updateExistingUser = evt => {
       evt.preventDefault();
       this.setState({ loadingStatus: true });
+      // Define the edited user's information by creating an object named "editedUser".
       const editedUser = {
         aud: this.state.aud,
         firstName: this.state.firstName,
@@ -45,13 +48,14 @@ class UserEditForm extends Component {
         prescribedMeds: this.state.prescribedMeds,
         tickBite: this.state.tickBite,
       };
-
+// Call the function userManager.update, using the parameters of the "editedUser" object and the user ID, which is retrieved from session storage. This makes sure that information will only be saved for the user that is currently logged in.
       userManager.update(editedUser, sessionStorage.getItem("credentials"))
       .then(() => this.props.history.push("/users"))
     }
 
     componentDidMount() {
         const id = sessionStorage.getItem("credentials")
+        // GEt the current user's information from the database and put it into state.
       userManager.get(id)
       .then(user => {
           this.setState({
@@ -61,17 +65,17 @@ class UserEditForm extends Component {
         zipCode: user.zipCode,
         email: user.email,
         dateOfBirth: user.dateOfBirth,
-        optIn: user.optIn,
+        optIn: false,
         diagnosisDate: user.diagnosisDate,
-        formalDiagnosis: user.formalDiagnosis,
-        prescribedMeds: user.prescribedMeds,
-        tickBite: user.tickBite,
+        formalDiagnosis: false,
+        prescribedMeds: false,
+        tickBite: false,
         loadingStatus: false,
 
           });
       });
     }
-
+// Render a form on the page where the user can update their profile information.
     render() {
       return (
         <>
@@ -84,6 +88,7 @@ class UserEditForm extends Component {
                 required
                 className="form-control"
                 onChange={this.handleFieldChange}
+                // All ID's in inputs must match what is in state.
                 id="firstName"
                 value={this.state.firstName}
               />
@@ -136,7 +141,8 @@ class UserEditForm extends Component {
                 checked={this.state.optIn}
                 onChange={this.handleCheckBox}
                 id="optIn"
-                value={this.state.optIn}
+                // Set initial value as "false" so that if the user leaves in unchecked, it will save as "false" instead of "undefined".
+                value="false"
               />
 
               <label htmlFor="diagnosisDate">Enter the date that you started having symptoms of Alpha-Gal allergy: </label>
@@ -157,7 +163,7 @@ class UserEditForm extends Component {
                 checked={this.state.formalDiagnosis}
                 onChange={this.handleCheckBox}
                 id="formalDiagnosis"
-                value={this.state.formalDiagnosis}
+                value="false"
               />
 
               <label htmlFor="prescribedMeds">Check the box if you have been prescribed ANY medications for Alpha-Gal allergy by a medical professional. These would include prescription antihistamines or an EpiPen: </label>
@@ -168,7 +174,7 @@ class UserEditForm extends Component {
                 checked={this.state.prescribedMeds}
                 onChange={this.handleCheckBox}
                 id="prescribedMeds"
-                value={this.state.prescribedMeds}
+                value="false"
               />
 
               <label htmlFor="tickBite">Check the box if you were bitten by a tick around the time you started having Alpha-Gal allergy symptoms: </label>
@@ -179,10 +185,11 @@ class UserEditForm extends Component {
                 checked={this.state.tickBite}
                 onChange={this.handleCheckBox}
                 id="tickBite"
-                value={this.state.tickBite}
+                value="false"
               />
             </div>
             <div className="alignRight">
+              {/* When the user clicks the "Save Changes" button, then the updated information will be saved in the database using the updateExistingUser function defined above. */}
               <button
                 type="button" disabled={this.state.loadingStatus}
                 onClick={this.updateExistingUser}

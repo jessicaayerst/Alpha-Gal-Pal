@@ -139,6 +139,4 @@ import SimpleMap from './data/publicZipCodeMap.js'
 2. Make changes and test
 3. Submit Pull Request with comprehensive description of changes
 
-## Donations
 
-This is free, open-source software. If you'd like to support the development of future projects, or say thanks for this one, you can donate BCH at

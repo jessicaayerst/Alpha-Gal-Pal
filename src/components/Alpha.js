@@ -5,7 +5,7 @@ import ApplicationViews from "./ApplicationViews"
 import {withRouter} from 'react-router-dom';
 import auth0Client from './auth/Auth.js'
 
-
+// Define the MAIN component, Alpha
 class Alpha extends Component {
     async componentDidMount() {
         if (this.props.location.pathname === '/callback') return;

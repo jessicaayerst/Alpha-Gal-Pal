@@ -19,7 +19,7 @@ class NavBar extends Component {
         </h1>
         <nav>
           <ul className="container">
-
+{/* If the user is not signed in, the sign in button will appear and the user will not be able to use any of the links in the navbar, otherwise, the sign out button will be there.  */}
             {!auth0Client.isAuthenticated() ? (
               <button className="btn btn-success" onClick={auth0Client.signIn}>Sign In</button>
         ) : (
@@ -33,6 +33,7 @@ class NavBar extends Component {
               >
                 Sign Out
               </button>
+              {/* Create links for each of the pages that the user can click on and navigate to. The links are defined in ApplicationViews.js */}
               <li><Link className="nav-link" to="/home">Home</Link></li>
             <li><Link className="nav-link" to="/users">User Profile</Link></li>
             <li><Link className="nav-link" to="/allergens">Reaction Tracker</Link></li>
